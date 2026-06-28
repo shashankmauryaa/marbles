@@ -41,7 +41,15 @@ export default function Statistics() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-transparent text-stone-50 relative z-20">
+    <section id="about" ref={sectionRef} className="py-32 bg-transparent text-stone-50 relative z-20 min-h-screen flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-32 text-center">
+        <h2 className="text-3xl md:text-5xl font-serif mb-8 uppercase tracking-tighter">Our Legacy</h2>
+        <p className="text-lg md:text-xl font-sans font-light text-stone-400 max-w-3xl mx-auto leading-relaxed">
+          For decades, we have been extracting the highest quality natural stone from the heart of the world's pristine mountains. 
+          Our commitment to sustainable quarrying and masterful craftsmanship ensures that every slab we produce 
+          is a unique work of art, destined to elevate the world&apos;s most prestigious architectural projects.
+        </p>
+      </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
         {stats.map((s, idx) => (
           <div key={idx} className="flex flex-col items-center">

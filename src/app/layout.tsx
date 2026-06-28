@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Vietnam's Finest Natural Marble",
-  description: "A luxury Vietnamese marble company showcasing craftsmanship, elegance, and premium quality stone.",
+  title: "The World's Finest Natural Marble",
+  description: "A luxury marble company showcasing craftsmanship, elegance, and premium quality stone.",
 };
 
 export default function RootLayout({

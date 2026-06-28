@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { title: "Quarry", desc: "Sustainable extraction from Vietnam's finest mountains." },
+  { title: "Quarry", desc: "Sustainable extraction from the world's finest mountains." },
   { title: "Selection", desc: "Rigorous quality control and pattern matching." },
   { title: "Cutting", desc: "Precision diamond-wire cutting for perfect slabs." },
   { title: "Finishing", desc: "Polishing to achieve our signature glossy reflection." },

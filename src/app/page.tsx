@@ -1,3 +1,4 @@
+import Navbar from "@/components/layout/Navbar";
 import HorizontalMarbles from "@/components/sections/HorizontalMarbles";
 import InfiniteGallery from "@/components/sections/InfiniteGallery";
 import Statistics from "@/components/sections/Statistics";
@@ -7,6 +8,7 @@ import Footer from "@/components/sections/Footer";
 export default function Home() {
   return (
     <main className="relative w-full bg-stone-950">
+      <Navbar />
       {/* Pinned sequence handling the hero and the image galleries */}
       <HorizontalMarbles />
       
