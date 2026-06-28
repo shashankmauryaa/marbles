@@ -4,19 +4,17 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const imagesRow1 = [
-  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=800&auto=format&fit=crop",
+const galleryImages = [
+  "/images/white.png",
+  "/images/black.png",
+  "/images/green.png",
+  "/images/onyx.png",
+  "/images/white.png",
+  "/images/black.png",
 ];
 
-const imagesRow2 = [
-  "https://images.unsplash.com/photo-1558211583-d26f610c1eb1?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600566753086-00f18efc2291?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1617806118233-18e1c0b1bbd4?q=80&w=800&auto=format&fit=crop",
-];
+const imagesRow1 = galleryImages.slice(0, 3);
+const imagesRow2 = galleryImages.slice(3, 6);
 
 export default function InfiniteGallery() {
   const row1Ref = useRef<HTMLDivElement>(null);
@@ -43,7 +41,7 @@ export default function InfiniteGallery() {
   }, []);
 
   return (
-    <section className="py-24 bg-stone-100 overflow-hidden relative z-10 border-y border-stone-200">
+    <section className="py-24 bg-transparent overflow-hidden relative z-20">
       <div className="mb-16 text-center">
         <h2 className="text-sm font-sans tracking-widest text-stone-500 uppercase mb-4">Exhibition</h2>
         <h3 className="text-4xl font-serif text-stone-900">Luxury in Application</h3>

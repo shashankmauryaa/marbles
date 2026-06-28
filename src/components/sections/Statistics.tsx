@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   { value: 45, label: "Years of Experience" },
@@ -40,7 +41,7 @@ export default function Statistics() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-stone-900 text-stone-50 relative z-10">
+    <section ref={sectionRef} className="py-32 bg-transparent text-stone-50 relative z-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
         {stats.map((s, idx) => (
           <div key={idx} className="flex flex-col items-center">
