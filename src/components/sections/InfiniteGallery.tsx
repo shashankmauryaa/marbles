@@ -9,42 +9,42 @@ const exhibitApplications = [
   {
     name: "Indian Traditional Home",
     slug: "indian-home-white",
-    image: "/images/exhibits/indian_home_white.png",
+    image: "/marbles/images/exhibits/indian_home_white.png",
   },
   {
     name: "Corporate Lobby",
     slug: "corporate-lobby-black",
-    image: "/images/exhibits/indian_office_black.png",
+    image: "/marbles/images/exhibits/indian_office_black.png",
   },
   {
     name: "Haveli Courtyard",
     slug: "haveli-courtyard-onyx",
-    image: "/images/exhibits/indian_courtyard_onyx.png",
+    image: "/marbles/images/exhibits/indian_courtyard_onyx.png",
   },
   {
     name: "Mumbai Penthouse",
     slug: "mumbai-penthouse-green",
-    image: "/images/exhibits/indian_penthouse_green.png",
+    image: "/marbles/images/exhibits/indian_penthouse_green.png",
   },
   {
     name: "White Temple Carvings",
     slug: "indian-temple-white",
-    image: "/images/exhibits/indian_temple_white.png",
+    image: "/marbles/images/exhibits/indian_temple_white.png",
   },
   {
     name: "Fine Dining Restaurant",
     slug: "indian-restaurant-green",
-    image: "/images/exhibits/indian_restaurant_green.png",
+    image: "/marbles/images/exhibits/indian_restaurant_green.png",
   },
   {
     name: "Luxury Master Bath",
     slug: "indian-bathroom-onyx",
-    image: "/images/exhibits/indian_bathroom_onyx.png",
+    image: "/marbles/images/exhibits/indian_bathroom_onyx.png",
   },
   {
     name: "Heritage Hotel Lobby",
     slug: "indian-hotel-black",
-    image: "/images/exhibits/indian_hotel_black.png",
+    image: "/marbles/images/exhibits/indian_hotel_black.png",
   },
 ];
 

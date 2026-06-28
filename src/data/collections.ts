@@ -2,7 +2,7 @@ export const collections = [
   {
     name: "White Marble",
     slug: "white-marble",
-    image: "/images/white.png",
+    image: "/marbles/images/white.png",
     desc: "Pure, luminous, timeless.",
     details: "Sourced from the most pristine quarries, our White Marble is renowned for its crystalline structure and brilliant luminosity. Its subtle, elegant veining makes it the ultimate choice for luxurious, timeless interiors.",
     specifications: [
@@ -15,7 +15,7 @@ export const collections = [
   {
     name: "Black Marble",
     slug: "black-marble",
-    image: "/images/black.png",
+    image: "/marbles/images/black.png",
     desc: "Bold, dramatic, elegant.",
     details: "A statement of profound elegance, the Black Marble collection features deep, impenetrable obsidian tones intertwined with striking white and gold calcitic veins. Perfect for dramatic architectural features.",
     specifications: [
@@ -28,7 +28,7 @@ export const collections = [
   {
     name: "Green Marble",
     slug: "green-marble",
-    image: "/images/green.png",
+    image: "/marbles/images/green.png",
     desc: "Vibrant, natural, exquisite.",
     details: "Echoing the majesty of ancient forests, our Green Marble offers a rich, emerald tapestry. Its dynamic veining patterns bring an unparalleled sense of natural vitality and luxury to any space.",
     specifications: [
@@ -41,7 +41,7 @@ export const collections = [
   {
     name: "Onyx",
     slug: "onyx",
-    image: "/images/onyx.png",
+    image: "/marbles/images/onyx.png",
     desc: "Translucent, luxurious, rare.",
     details: "Onyx is the crown jewel of natural stone. Characterized by its incredible translucency and vibrant, contrasting bands of color, it is meant to be backlit to reveal its breathtaking, ethereal beauty.",
     specifications: [
