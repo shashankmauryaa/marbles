@@ -20,6 +20,14 @@ export default function Navbar() {
   }, []);
 
   const scrollTo = (id: string) => {
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (id === "collections") {
+      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+      return;
+    }
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -40,7 +48,8 @@ export default function Navbar() {
       </div>
       <div className="hidden md:flex gap-8 text-white/70 font-sans text-xs tracking-[0.2em] uppercase">
         <button onClick={() => scrollTo("home")} className="hover:text-white transition-colors">Home</button>
-        <button onClick={() => scrollTo("catalogues")} className="hover:text-white transition-colors">Catalogues</button>
+        <button onClick={() => scrollTo("collections")} className="hover:text-white transition-colors">Catalogues</button>
+        <button onClick={() => scrollTo("exhibition")} className="hover:text-white transition-colors">Exhibits</button>
         <button onClick={() => scrollTo("about")} className="hover:text-white transition-colors">About</button>
         <button onClick={() => scrollTo("contact")} className="hover:text-white transition-colors">Contact</button>
       </div>

@@ -4,13 +4,9 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
-const collections = [
-  { name: "White Marble", image: "/images/white.png", desc: "Pure, luminous, timeless." },
-  { name: "Black Marble", image: "/images/black.png", desc: "Bold, dramatic, elegant." },
-  { name: "Green Marble", image: "/images/green.png", desc: "Vibrant, natural, exquisite." },
-  { name: "Onyx", image: "/images/onyx.png", desc: "Translucent, luxurious, rare." },
-];
+import { collections } from "@/data/collections";
 
 export default function HorizontalMarbles() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,10 +14,6 @@ export default function HorizontalMarbles() {
   const textRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const firstTextRef = useRef<HTMLDivElement>(null);
-  
-  // Intro Refs
-  const topSlabRef = useRef<HTMLDivElement>(null);
-  const bottomSlabRef = useRef<HTMLDivElement>(null);
   const lusterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,27 +21,10 @@ export default function HorizontalMarbles() {
 
     const ctx = gsap.context(() => {
       
-      // --- INTRO TIMELINE (SLAB REVEAL & LUSTER) ---
-      const introTl = gsap.timeline();
-
-      introTl.fromTo(shakeRef.current, 
-        { y: 15 },
-        { y: 0, duration: 0.6, ease: "bounce.out" }
-      )
-      .to(topSlabRef.current, { 
-        yPercent: -100, 
-        duration: 1.8, 
-        ease: "power4.inOut" 
-      }, "+=0.3")
-      .to(bottomSlabRef.current, { 
-        yPercent: 100, 
-        duration: 1.8, 
-        ease: "power4.inOut" 
-      }, "<")
-      .fromTo(lusterRef.current, 
+      // Luster effect on load
+      gsap.fromTo(lusterRef.current, 
         { xPercent: -50, yPercent: -50, opacity: 0 },
-        { xPercent: 50, yPercent: 50, opacity: 0.6, duration: 2, ease: "power2.inOut" },
-        "-=1.0"
+        { xPercent: 50, yPercent: 50, opacity: 0.6, duration: 2, ease: "power2.inOut", delay: 0.2 }
       );
 
       // --- SCROLL TIMELINE (HORIZONTAL GALLERY) ---
@@ -93,15 +68,7 @@ export default function HorizontalMarbles() {
   return (
     <section id="home" ref={containerRef} className="relative w-full h-screen bg-stone-950 overflow-hidden text-stone-50">
       
-      {/* THE HEAVY SLABS (Intro Reveal) */}
-      <div className="absolute inset-0 z-50 pointer-events-none flex flex-col">
-        <div ref={topSlabRef} className="w-full h-1/2 bg-stone-950 border-b border-stone-800 flex items-end justify-center pb-4">
-        </div>
-        <div ref={bottomSlabRef} className="w-full h-1/2 bg-stone-950 border-t border-stone-800" />
-      </div>
-
-      {/* SHAKE WRAPPER */}
-      <div ref={shakeRef} className="w-full h-full relative">
+      <div className="w-full h-full relative">
         
         {/* BACKGROUND: HORIZONTAL SCROLL GALLERY */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -118,7 +85,6 @@ export default function HorizontalMarbles() {
                     className="object-cover"
                     priority={idx === 0}
                   />
-                  {/* Dark overlay for readability */}
                   <div className="absolute inset-0 bg-black/30" />
 
                   {/* LUSTER PASS (Only on the first image, the white marble) */}
@@ -145,9 +111,12 @@ export default function HorizontalMarbles() {
                 >
                   <h2 className="text-sm font-sans tracking-[0.2em] uppercase mb-4 opacity-80">Collection 0{idx + 1}</h2>
                   <h3 className="text-6xl md:text-8xl font-serif mb-6 drop-shadow-lg">{item.name}</h3>
-                  <p className="text-xl md:text-2xl font-sans font-light italic max-w-xl mx-auto opacity-90 drop-shadow-md">
+                  <p className="text-xl md:text-2xl font-sans font-light italic max-w-xl mx-auto opacity-90 drop-shadow-md mb-8">
                     {item.desc}
                   </p>
+                  <Link href={`/collections/${item.slug}`} className="inline-flex items-center gap-3 px-8 py-3 border border-white/30 text-white font-sans text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-stone-900 transition-colors duration-300 backdrop-blur-sm">
+                    More Details
+                  </Link>
                 </div>
 
               </div>
